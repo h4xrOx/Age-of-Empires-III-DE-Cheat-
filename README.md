@@ -59,7 +59,7 @@ BOOL APIENTRY DllMain(HcheatULE hcheatule, DWORD  ul_reason_for_call, LPVOID lpR
 #include <windows.h>
 
 
-//include <SDKDDKVer.h>
+#include <SDKDDKVer.h>
 ```
 # targetver.h -create a new header file called "targetver.h"
 ```

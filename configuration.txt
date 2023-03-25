@@ -1,0 +1,3 @@
+game.opt = "-cheat:AoE3_cheat.dll"
+user.con = "user.con"
+user.cfg = "user.cfg"

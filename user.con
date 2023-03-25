@@ -1,0 +1,137 @@
+// In user.con
+alias +zoomin "camera_zoomin"
+alias -zoomin ""
+alias +zoomout "camera_zoomout"
+alias -zoomout ""
+
+// In the project code
+void OnChatMessage(const char* message)
+{
+    if (strcmp(message, "camera_zoomin") == 0) {
+        Camera::GetInstance().ZoomIn();
+    }
+    else if (strcmp(message, "camera_zoomout") == 0) {
+        Camera::GetInstance().ZoomOut();
+    }
+}
+
+// Fog of War Remover
+; Remove fog of war when F5 key is pressed
+alias "+fogofwar" "cegviscommander"
+alias "-fogofwar" "cegviscommander"
+bind "F5" "+fogofwar"
+cegviscommander()
+{
+    cegvisvisible true
+}
+
+// Bind the F5 key to remove the fog of war
+bind "F5" "+fogofwar"
+
+// Bind the mouse wheel to zoom in and out
+bind "MOUSEWHEELUP" "+zoomin"
+bind "MOUSEWHEELDOWN" "+zoomout"
+
+// Bind the number keys to change perspective to a specific player
+bind "1" "+changeperspective 1"
+bind "2" "+changeperspective 2"
+bind "3" "+changeperspective 3"
+bind "4" "+changeperspective 4"
+bind "5" "+changeperspective 5"
+bind "6" "+changeperspective 6"
+bind "7" "+changeperspective 7"
+bind "8" "+changeperspective 8"
+
+// Define the aliases for the custom commands
+alias +fogofwar "toggle_fogofwar"
+alias -fogofwar ""
+alias +zoomin "camera_zoomin"
+alias -zoomin ""
+alias +zoomout "camera_zoomout"
+alias -zoomout ""
+alias +changeperspective "change_perspective"
+alias -changeperspective ""
+
+// Define the implementation of the custom commands
+void toggle_fogofwar() {
+    // Toggle the fog of war on or off
+    // ...
+}
+
+void camera_zoomin() {
+    // Zoom the camera in
+    // ...
+}
+
+void camera_zoomout() {
+    // Zoom the camera out
+    // ...
+}
+
+void change_perspective(int playerIndex) {
+    // Change the camera's perspective to the specified player
+    // ...
+}
+```
+# user.cfg -create a file called "user.cfg"
+```
+// Enable the C++ cheat
+cheat AoE3cheat
+
+// Remove Fog of War when pressing F5
+bind "F5" "injectDll NoFogOfWar.dll"
+
+// Set Camera Settings
+bind "CTRL+1" "SetCameraPos 0 0"
+bind "CTRL+2" "SetCameraPos 0 20"
+bind "CTRL+3" "SetCameraPos 20 0"
+bind "CTRL+4" "SetCameraPos 20 20"
+
+// Change Perspective to Players 1-8
+bind "ALT+1" "CameraToPlayer 1"
+bind "ALT+2" "CameraToPlayer 2"
+bind "ALT+3" "CameraToPlayer 3"
+bind "ALT+4" "CameraToPlayer 4"
+bind "ALT+5" "CameraToPlayer 5"
+bind "ALT+6" "CameraToPlayer 6"
+bind "ALT+7" "CameraToPlayer 7"
+bind "ALT+8" "CameraToPlayer 8"
+
+// Set Min and Max Zoom Levels
+set minZoomLevel 60
+set maxZoomLevel 500
+
+
+// Set the camera zoom limits
+cameraMinZoom 60
+cameraMaxZoom 500
+minZoomLevel 60
+maxZoomLevel 500
+
+// Inject the DLL file
+dll AoE3DLL.dll
+
+// Bind the "F5" key to inject the DLL and remove fog of war
+bind F5 "+injectDLL; +removeFog"
+
+// Define the "+injectDLL" command
+alias "+injectDLL" "dll AoE3DLL.dll"
+
+// Define the "-injectDLL" command
+alias "-injectDLL" ""
+
+// Define the "+removeFog" command
+alias "+removeFog" "set fogOfWarEnabled false"
+
+// Define the "-removeFog" command
+alias "-removeFog" "set fogOfWarEnabled true"
+
+// Set up the ability to switch perspectives
+bind 1 "cameraFollow player1"
+bind 2 "cameraFollow player2"
+bind 3 "cameraFollow player3"
+bind 4 "cameraFollow player4"
+bind 5 "cameraFollow player5"
+bind 6 "cameraFollow player6"
+bind 7 "cameraFollow player7"
+bind 8 "cameraFollow player8"

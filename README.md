@@ -3,7 +3,7 @@
 Age of Empires III: Definitive Edition Mod with Fog of War Remover and Custom GUI.
 
 # Create a new Visual Studio project and select "Win32 Console Application".
-#In the project properties, set the "Configuration Type" to "Dynamic Library (.dll)". 
+- In the project properties, set the "Configuration Type" to "Dynamic Library (.dll)". 
 
 # Create a new header file called "FogOfWarRemover.h".
 ```
